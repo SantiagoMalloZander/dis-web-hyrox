@@ -23,23 +23,16 @@ fetch("js/estaciones.json")
   });
 
 
-// validacion del formulario del modal
+// validacion de bootstrap: si falta algo no se envia, si esta todo bien se manda a W3Forms
 const formulario = document.querySelector("#miFormulario");
-const mensajeGracias = document.querySelector("#mensajeGracias");
 
 formulario.addEventListener("submit", function (event) {
 
-  event.preventDefault();
-
   if (!formulario.checkValidity()) {
+    event.preventDefault();
     event.stopPropagation();
-    formulario.classList.add("was-validated");
-    return;
   }
 
   formulario.classList.add("was-validated");
-
-  formulario.classList.add("d-none");
-  mensajeGracias.classList.remove("d-none");
 
 });
