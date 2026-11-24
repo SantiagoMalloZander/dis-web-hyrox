@@ -1,0 +1,58 @@
+[
+  {
+    "numero": "01",
+    "nombre": "SkiErg",
+    "medida": "1000 m",
+    "descripcion": "Tirones de brazos y core en la máquina de esquí. Arrancás fuerte pero sin quemarte.",
+    "icono": "bi-snow"
+  },
+  {
+    "numero": "02",
+    "nombre": "Sled Push",
+    "medida": "50 m",
+    "descripcion": "Empujar el trineo con peso. Piernas, cadera baja y pasos cortos.",
+    "icono": "bi-arrow-right-square"
+  },
+  {
+    "numero": "03",
+    "nombre": "Sled Pull",
+    "medida": "50 m",
+    "descripcion": "Tirar del trineo con una soga. La espalda y el agarre hacen todo el trabajo.",
+    "icono": "bi-arrow-left-square"
+  },
+  {
+    "numero": "04",
+    "nombre": "Burpee Broad Jumps",
+    "medida": "80 m",
+    "descripcion": "Burpee y salto largo hacia adelante. La estación que más cabeza pide.",
+    "icono": "bi-chevron-double-right"
+  },
+  {
+    "numero": "05",
+    "nombre": "Remo",
+    "medida": "1000 m",
+    "descripcion": "Un kilómetro en el remoergómetro. Ritmo constante y buena técnica.",
+    "icono": "bi-water"
+  },
+  {
+    "numero": "06",
+    "nombre": "Farmers Carry",
+    "medida": "200 m",
+    "descripcion": "Caminar con una pesa rusa en cada mano. Postura firme y agarre de acero.",
+    "icono": "bi-handbag"
+  },
+  {
+    "numero": "07",
+    "nombre": "Sandbag Lunges",
+    "medida": "100 m",
+    "descripcion": "Estocadas con la bolsa de arena sobre los hombros. Acá se gana o se pierde.",
+    "icono": "bi-backpack"
+  },
+  {
+    "numero": "08",
+    "nombre": "Wall Balls",
+    "medida": "100 reps",
+    "descripcion": "Sentadilla y lanzamiento de la pelota al blanco. El cierre de la carrera.",
+    "icono": "bi-dribbble"
+  }
+]

@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@100..900&display=swap');
+
+:root {
+  --amarillo: #ffe100;
+  --negro: #0b0b0b;
+  --gris: #161616;
+  --font-titulos: "Anton", sans-serif;
+  --font-general: "Archivo", sans-serif;
+}
+
+body {
+  font-family: var(--font-general);
+  font-weight: 400;
+}
+
+/* Anton viene en un solo peso (400), por eso se lo volvemos a poner a los titulos */
+h1,
+h2 {
+  font-family: var(--font-titulos);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 3.4rem;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+strong {
+  font-weight: 800;
+}
+
+/* sobrescribimos clases de bootstrap con nuestro amarillo y nuestro negro */
+.bg-black {
+  background-color: var(--negro) !important;
+}
+
+.text-warning {
+  color: var(--amarillo) !important;
+}
+
+.border-warning {
+  border-color: var(--amarillo) !important;
+}
+
+.btn-warning {
+  background-color: var(--amarillo);
+  border-color: var(--amarillo);
+  color: var(--negro);
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  transform: translate(0, -3px);
+  box-shadow: 0 6px 16px rgba(255, 225, 0, 0.35);
+}
+
+/* barra de navegacion */
+.navbar-brand {
+  font-family: var(--font-titulos);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--amarillo) !important;
+}
+
+.navbar-toggler .bi {
+  font-size: 2rem;
+}
+
+/* textos chiquitos arriba de los titulos */
+.etiqueta {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.etiqueta .bi {
+  font-size: 0.6rem;
+}
+
+/* tarjetas de las estaciones (las arma el js) */
+.estacion {
+  background-color: var(--gris);
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.estacion:hover {
+  border-color: var(--amarillo) !important;
+  transform: translate(0, -6px);
+  box-shadow: 0 10px 24px rgba(255, 225, 0, 0.15);
+}
+
+.estacion .bi {
+  font-size: 2rem;
+  color: var(--amarillo);
+}
+
+.estacion h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.estacion .medida {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amarillo);
+}
+
+/* horarios */
+.horario {
+  transition: background-color 0.3s ease;
+}
+
+.horario:hover {
+  background-color: var(--gris);
+}
+
+.horario .hora {
+  font-family: var(--font-titulos);
+  font-size: 1.6rem;
+}
+
+/* imagen del box */
+.foto-box {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.foto-box:hover {
+  opacity: 0.85;
+  transform: translate(0, -6px);
+}
+
+/* modal y formulario */
+.modal-content {
+  border-radius: 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--amarillo);
+  box-shadow: 0 0 0 4px rgba(255, 225, 0, 0.25);
+}
+
+/* footer */
+footer .navbar-brand {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.redes a {
+  color: #ffffff;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.redes a:hover {
+  color: var(--amarillo);
+}
+
+/* en pantallas mas grandes agrandamos el titulo y la foto */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 6rem;
+  }
+
+  .foto-box {
+    height: 460px;
+  }
+}

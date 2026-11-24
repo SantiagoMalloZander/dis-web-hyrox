@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Estación 8 | Entrenamiento Hyrox</title>
+
+    <!-- Link a Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Iconos de Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Link a Bootstrap js que incluye popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- css nuestro -->
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body class="bg-black text-light">
+
+    <!-- barra de navegacion -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <img src="img/logo.svg" alt="Logo Estación 8" width="40" height="40" />
+          Estación 8
+        </a>
+
+        <button
+          class="navbar-toggler border-warning"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mi-menu"
+        >
+          <span class="bi bi-list text-warning"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mi-menu">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#estaciones">Estaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#horarios">Horarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#el-box">El box</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/" target="_blank">
+                <i class="bi bi-instagram"></i> Instagram
+              </a>
+            </li>
+            <li class="nav-item">
+              <button
+                class="btn btn-warning fw-bold mt-2 mt-lg-0"
+                data-bs-toggle="modal"
+                data-bs-target="#miModal"
+              >
+                Clase de prueba <i class="bi bi-arrow-up-right"></i>
+              </button>
+            </li> <!--cierra el boton del modal -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!--inicio del modal -->
+    <div class="modal fade" id="miModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen-md-down">
+        <div class="modal-content bg-dark text-light border border-warning">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title">Reservá tu clase de prueba</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+
+            <form id="miFormulario" action="https://api.web3forms.com/submit" method="post" novalidate class="needs-validation">
+              <input type="hidden" name="access_key" value="TU-ACCESS-KEY-DE-W3FORMS" />
+
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Nombre Apellido"
+                  required
+                />
+                <div class="invalid-feedback">Te olvidaste de poner el nombre.</div>
+              </div> <!--cierra campo de nombre -->
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="nombre@email.com"
+                  required
+                />
+                <div class="invalid-feedback">Ingresá un email válido.</div>
+              </div> <!--cierra campo de email -->
+
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="telefono"
+                  name="telefono"
+                  placeholder="11 1234 5678"
+                />
+              </div> <!--cierra campo de telefono -->
+
+              <div class="mb-3">
+                <label for="nivel" class="form-label">¿Cómo te sentís hoy?</label>
+                <select class="form-select" name="nivel" id="nivel" required>
+                  <option value="" selected disabled>Elegí tu nivel</option>
+                  <option value="principiante">Nunca hice Hyrox</option>
+                  <option value="intermedio">Ya entreno funcional</option>
+                  <option value="avanzado">Quiero competir en Pro</option>
+                </select>
+                <div class="invalid-feedback">Seleccioná un nivel.</div>
+                <div class="valid-feedback">¡Buenísimo!</div>
+              </div> <!--cierre del menu -->
+
+              <div class="mb-4">
+                <label for="fecha" class="form-label">¿Qué día querés venir?</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" required />
+                <div class="invalid-feedback">Elegí un día.</div>
+              </div> <!--cierra campo de fecha -->
+
+              <button class="btn btn-warning fw-bold w-100">Enviar</button>
+            </form>
+
+            <div id="mensajeGracias" class="d-none text-center py-4">
+              <i class="bi bi-check-circle text-warning fs-1"></i>
+              <p class="fs-4 mt-3 mb-0">¡Listo! Te escribimos para confirmar tu clase.</p>
+            </div>
+
+          </div>
+
+          <div class="modal-footer border-secondary">
+            <button class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- cierre del modal -->
+
+
+    <!-- encabezado -->
+    <header class="py-5 border-bottom border-secondary">
+      <div class="container py-lg-5">
+        <p class="etiqueta text-warning text-uppercase fw-bold mb-3">
+          <i class="bi bi-circle-fill"></i> Buenos Aires · Entrenamiento Hyrox
+        </p>
+
+        <h1 class="text-uppercase mb-4">
+          8 estaciones.
+          <span class="d-block text-warning">8 kilómetros.</span>
+          Una sola carrera.
+        </h1>
+
+        <p class="lead col-lg-7 mb-4">
+          En Estación 8 te preparamos para tu primer Hyrox o para bajar tu marca.
+          Entrenamos <strong>correr, empujar, tirar y cargar</strong> como en la competencia real.
+        </p>
+
+        <div class="d-flex flex-wrap gap-3">
+          <button class="btn btn-warning btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#miModal">
+            Quiero probar <i class="bi bi-arrow-up-right"></i>
+          </button>
+          <a href="#estaciones" class="btn btn-outline-light btn-lg">Ver las estaciones</a>
+        </div>
+      </div>
+    </header>
+
+
+    <main>
+
+      <!-- primera seccion: estaciones, se cargan con fetch desde el json -->
+      <section id="estaciones" class="container py-5">
+        <div class="row align-items-end mb-4">
+          <div class="col-md-7">
+            <p class="etiqueta text-warning text-uppercase fw-bold mb-2">La carrera</p>
+            <h2 class="text-uppercase mb-0">Las 8 estaciones</h2>
+          </div>
+          <div class="col-md-5">
+            <p class="text-secondary text-md-end mb-0">
+              Entre estación y estación corrés 1 km. Así, ocho veces.
+            </p>
+          </div>
+        </div>
+
+        <div id="lista-estaciones" class="row g-4"></div>
+      </section>
+
+
+      <!-- segunda seccion: horarios -->
+      <section id="horarios" class="container py-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end border-bottom border-secondary pb-3">
+          <h2 class="text-uppercase mb-2 mb-md-0">Horarios</h2>
+          <p class="text-secondary mb-0">De lunes a sábado. Cupos de 12 personas por clase.</p>
+        </div>
+
+        <div class="row align-items-center py-3 border-bottom border-secondary horario">
+          <div class="col-3 col-md-2 hora text-warning fw-bold">07:00</div>
+          <div class="col-9 col-md-7">
+            <h3 class="fs-4 mb-1">Hyrox Run</h3>
+            <p class="text-secondary mb-0">Pasadas de 1 km y técnica de carrera.</p>
+          </div>
+          <div class="col-md-3 d-none d-md-flex justify-content-end">
+            <span class="badge rounded-pill border border-secondary fw-normal">Lunes y jueves</span>
+          </div>
+        </div>
+
+        <div class="row align-items-center py-3 border-bottom border-secondary horario">
+          <div class="col-3 col-md-2 hora text-warning fw-bold">09:30</div>
+          <div class="col-9 col-md-7">
+            <h3 class="fs-4 mb-1">Fuerza para estaciones</h3>
+            <p class="text-secondary mb-0">Trineo, sandbag y farmers para ganar fuerza.</p>
+          </div>
+          <div class="col-md-3 d-none d-md-flex justify-content-end">
+            <span class="badge rounded-pill border border-secondary fw-normal">Martes y viernes</span>
+          </div>
+        </div>
+
+        <div class="row align-items-center py-3 border-bottom border-secondary horario">
+          <div class="col-3 col-md-2 hora text-warning fw-bold">18:00</div>
+          <div class="col-9 col-md-7">
+            <h3 class="fs-4 mb-1">Doubles</h3>
+            <p class="text-secondary mb-0">Entrenamiento en parejas para la categoría Doubles.</p>
+          </div>
+          <div class="col-md-3 d-none d-md-flex justify-content-end">
+            <span class="badge rounded-pill border border-secondary fw-normal">Lunes y miércoles</span>
+          </div>
+        </div>
+
+        <div class="row align-items-center py-3 border-bottom border-secondary horario">
+          <div class="col-3 col-md-2 hora text-warning fw-bold">20:00</div>
+          <div class="col-9 col-md-7">
+            <h3 class="fs-4 mb-1">Simulacro</h3>
+            <p class="text-secondary mb-0">Medio Hyrox con cronómetro, como el día de la carrera.</p>
+          </div>
+          <div class="col-md-3 d-none d-md-flex justify-content-end">
+            <span class="badge rounded-pill border border-secondary fw-normal">Viernes</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- tercera seccion: el box, con imagen -->
+      <section id="el-box" class="container py-5">
+        <div class="row g-5 align-items-center">
+
+          <div class="col-md-6">
+            <img
+              src="https://images.unsplash.com/photo-1743993414579-9ad1bb84038b?q=80&w=1200&auto=format&fit=crop"
+              class="img-fluid rounded-3 foto-box"
+              alt="Personas entrenando en un gimnasio grande"
+            />
+            <p class="etiqueta text-secondary text-uppercase mt-2 mb-0">Un lugar para entrenar en serio</p>
+          </div>
+
+          <div class="col-md-6 d-flex flex-column">
+            <p class="etiqueta text-warning text-uppercase fw-bold mb-2">El box</p>
+            <h2 class="text-uppercase mb-3">Entrená <span class="text-warning">acá.</span></h2>
+            <p class="text-secondary mb-4">
+              Un galpón de 600 m² con pista de trineo, remos, SkiErgs y todo lo que vas a encontrar en la carrera.
+            </p>
+
+            <div class="d-flex align-items-start gap-3 py-3 border-top border-secondary">
+              <i class="bi bi-geo-alt text-warning fs-3"></i>
+              <div>
+                <h3 class="fs-5 mb-1">Estación 8</h3>
+                <p class="text-secondary mb-0">Av. Warnes 1450, Villa Crespo</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3 py-3 border-top border-secondary">
+              <i class="bi bi-clock text-warning fs-3"></i>
+              <div>
+                <h3 class="fs-5 mb-1">De 07:00 a 22:00 h</h3>
+                <p class="text-secondary mb-0">Sábados de 09:00 a 13:00 h</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3 py-3 border-top border-bottom border-secondary">
+              <i class="bi bi-train-front text-warning fs-3"></i>
+              <div>
+                <h3 class="fs-5 mb-1">Cómo llegar</h3>
+                <p class="text-secondary mb-0">Subte B, estación Malabia</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- pie de pagina -->
+    <footer class="border-top border-secondary py-4">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <img src="img/logo.svg" alt="Logo Estación 8" width="32" height="32" />
+          Estación 8
+        </a>
+
+        <p class="text-secondary mb-0">Correr. Empujar. Tirar. Repetir.</p>
+
+        <div class="d-flex gap-3 redes">
+          <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/" target="_blank"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.tiktok.com/" target="_blank"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/codigo.js"></script>
+  </body>
+</html>
